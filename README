@@ -1,0 +1,52 @@
+Binary Click
+[ BinKli 1.0 ]
+
+Click the binary 1 game written with erlang, cowboy (erlang based http server) html, css, js, jquery.
+
+--------
+
+Basic Setup
+
+Install Erlang
+
+Help with the setup:
+
+https://byui-cse.github.io/cse121e-course/week01/index.html
+
+Install git
+
+-Mac:  sudo brew install git
+-WSL/Ubuntu: sudo apt install git
+
+Install make
+
+-Make should already be on Mac after installing rebar3 with homebrew
+-WSL/Ubuntu: sudo apt install make
+
+After installation above:
+
+Run a terminal and cd in to the folder you want to create the repo
+
+Run these commands
+
+git clone https://github.com/comptekki/binkli
+
+cd binkli
+
+make run
+
+When it is done compiling and starting up, in your web browser go to:
+
+http://localhost:8080/binkli
+
+Follow the instructions to play!
+
+--------
+Versions
+--------
+
+1.0
+
+-Initial release
+
+--------

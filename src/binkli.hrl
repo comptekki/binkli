@@ -1,0 +1,7 @@
+-define(NODENAME,"ecom").
+-define(SERVERS,['ecom@localhost']).
+-define(CONSOLES, [hanwebs, hanwebs2, hanwebs3, hanwebs4]).
+-define(CSS, "/static/binkli.css").
+-define(JQUERY, "/static/jquery.min.js").
+-define(JQUERYUI, "/static/jquery-ui-1.12.1/jquery-ui.min.js").
+-define(JQUERYUICSS, "/static/jquery-ui-1.12.1/jquery-ui.min.css").

@@ -1,0 +1,13 @@
+{application, binkli, [
+	{description, "Click Binary 1"},
+	{vsn, "1.0"},
+	{modules, []},
+	{registered, [binkli_sup]},
+	{applications, [
+		kernel,
+		stdlib,
+		cowboy
+	]},
+	{mod, {binkli_app, []}},
+	{env, []}
+]}.
