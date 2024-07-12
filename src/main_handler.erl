@@ -173,14 +173,37 @@ Port/binary,
 			return 'Socket status: ' + socket.readyState +' (Closed)'
 	}
 
+	function startTimer() {
+	  aTimer = setInterval(function () {
+        sets = sets + 1;
+        attempts = 0;
+
+        if (sets === 6) {
+          $('#dialog').html('<br>'+correct+' out of 5 correct!');
+          $('#dialog2').html('');
+          $('#dialog3').html('<button id=\\'play\\' class=\\'ui-button ui-widget ui-corner-all\\'>Play</button>');
+
+          reset()
+        } else {
+          mkbuts()
+        }
+      }, 2000);  // end timer fun
+	}
+
+	function resetTimer(){
+	  clearInterval(aTimer);
+	  startTimer();
+	}
 
     $(document).on('click', '#play', function(){ 
-      $('#dialog3').html('');      
+      $('#dialog3').html('');
+      startTimer();
       send('0:com:play');
     });
 
     $(document).on('click', '#b1', function(){
 //console.log('bc: '+bc+' - not bc: '+(!bc));
+      resetTimer();
       if (bc > 0) {
         attempts = attempts + 1;
         if ($('#b1').html() === '1') {
@@ -230,6 +253,7 @@ Port/binary,
 
     $(document).on('click', '#b2', function(){
 //console.log('bc: '+bc+' - not bc: '+(!bc));
+      resetTimer();
       if (bc > 0) {
         attempts = attempts + 1;
         if ($('#b2').html() === '1') {
@@ -279,6 +303,7 @@ Port/binary,
 
     $(document).on('click', '#b3', function(){
 //console.log('bc: '+bc+' - not bc: '+(!bc));
+      resetTimer();
       if (bc > 0) {
         attempts = attempts + 1;
         if ($('#b3').html() === '1') {
@@ -328,6 +353,7 @@ Port/binary,
 
     $(document).on('click', '#b4', function(){
 //console.log('bc: '+bc+' - not bc: '+(!bc));
+      resetTimer();
       if (bc > 0) {
         attempts = attempts + 1;
         if ($('#b4').html() === '1') {
@@ -384,6 +410,7 @@ Port/binary,
     var b2 = 0;
     var b3 = 0;
     var b4 = 0;
+    aTimer = 0;
 
     function reset(){
       correct = 0;
@@ -395,6 +422,7 @@ Port/binary,
       b2 = 0;
       b3 = 0;
       b4 = 0;
+      clearInterval(aTimer);
     }
 
     function mkbuts(){
@@ -429,7 +457,7 @@ Port/binary,
 <div id=head>Welcome to BinKli.<br>Click the Play button to start the game!<br><br>
 You will be given 5 sets to guess from.<br>
 Click all number 1 buttons to continue to a new set.<br>
-(Example: If there are 3 1's, you get 3 tries to guess.  2 1's you get 2 tries to guess)</div><br>
+(Example: If there are 3 1's, you get 3 tries to guess.  2 1's you get 2 tries to guess)<br> You have 2 seconds to respond for each try!</div><br>
 <div id=buttons></div>
 <div id=dialog></div>
 <div id=dialog2></div>
