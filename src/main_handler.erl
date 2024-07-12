@@ -183,6 +183,11 @@ Port/binary,
           $('#dialog2').html('');
           $('#dialog3').html('<button id=\\'play\\' class=\\'ui-button ui-widget ui-corner-all\\'>Play</button>');
 
+          $('#b1').attr('disabled', true);
+          $('#b2').attr('disabled', true);
+          $('#b3').attr('disabled', true);
+          $('#b4').attr('disabled', true);
+
           reset()
         } else {
           mkbuts()
