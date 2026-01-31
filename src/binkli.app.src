@@ -1,6 +1,6 @@
 {application, binkli, [
 	{description, "Click Binary 1"},
-	{vsn, "1.0"},
+	{vsn, "3.0"},
 	{modules, []},
 	{registered, [binkli_sup]},
 	{applications, [

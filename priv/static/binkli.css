@@ -261,6 +261,10 @@ table { border-collapse:collapse;}
 	color:inherit !important;
 }
 
+.button1.pressed {
+  background-color: #005500;
+}
+
 a.ui-button:focus { color:inherit !important; }
 
 .ui-button {
