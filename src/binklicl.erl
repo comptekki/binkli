@@ -4,6 +4,7 @@
 
 start() ->
     io:format("~nbinklicl start reg~n~n"),
+    io:format("~nGo to:~n~n http://localhost:8080/binkli ~n~nin your browser to run the game~n~n"),
     register(rec_com, spawn(binklicl, rec_com, [])).
 
 rec_com() ->
