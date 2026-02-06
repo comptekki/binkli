@@ -406,11 +406,6 @@ Port/binary,
       }
     });
 
-  $( function() {
-    $( 'button, input, a' ).on( 'click', function( event ) {
-      event.preventDefault();
-    } );
-  } );
 
     var sets = 1;
     var correct = 0;
